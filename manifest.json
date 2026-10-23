@@ -1,0 +1,9 @@
+{
+  "id": "plainsight-menu-commands",
+  "name": "Plainsight Menu Commands",
+  "version": "0.1.0",
+  "minAppVersion": "1.7.2",
+  "description": "Give Apple Intelligence's Writing Tools, and any other menu bar item, a hotkey on a Mac. Works with or without Plainsight.",
+  "author": "Magnus",
+  "isDesktopOnly": true
+}

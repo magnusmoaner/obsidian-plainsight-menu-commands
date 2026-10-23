@@ -1,0 +1,31 @@
+import { describe, expect, test } from "vitest";
+import { DEFAULT_SETTINGS, parseSettings, serializeSettings } from "../settings-data";
+
+describe("parseSettings", () => {
+  test("nothing stored gives the defaults", () => {
+    expect(parseSettings(null)).toEqual({ settings: DEFAULT_SETTINGS, extra: {} });
+    expect(parseSettings([1, 2])).toEqual({ settings: DEFAULT_SETTINGS, extra: {} });
+  });
+
+  test("keeps valid values", () => {
+    const stored = { writingToolsCommands: false, writingTools: ["Summarize"], menuCommands: "Window > Minimize" };
+    expect(parseSettings(stored).settings).toEqual(stored);
+  });
+
+  test("a value of the wrong type falls back to its default", () => {
+    const { settings } = parseSettings({ writingToolsCommands: "yes", menuCommands: 42 });
+    expect(settings).toEqual(DEFAULT_SETTINGS);
+  });
+
+  test("a list must be a list of names", () => {
+    expect(parseSettings({ writingTools: "Summarize" }).settings.writingTools).toEqual(DEFAULT_SETTINGS.writingTools);
+    expect(parseSettings({ writingTools: [1] }).settings.writingTools).toEqual(DEFAULT_SETTINGS.writingTools);
+    expect(parseSettings({ writingTools: [] }).settings.writingTools).toEqual([]);
+  });
+
+  test("unknown keys are kept aside, so a save never drops them", () => {
+    const { extra } = parseSettings({ menuCommands: "", futureOption: { a: 1 } });
+    expect(extra).toEqual({ futureOption: { a: 1 } });
+    expect(serializeSettings(DEFAULT_SETTINGS, extra)).toEqual({ ...DEFAULT_SETTINGS, futureOption: { a: 1 } });
+  });
+});
