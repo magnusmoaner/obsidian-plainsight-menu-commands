@@ -4,7 +4,9 @@ Give Apple Intelligence's **Writing Tools**, and any other item in Obsidian's me
 
 Obsidian's hotkeys only work for commands, and Writing Tools aren't commands: they live in macOS's **Edit → Writing Tools** menu. This plugin turns them, and any other menu item you name, into ordinary Obsidian commands. You can then give them a hotkey in Obsidian, run them from the command palette, or put them on a toolbar button (for example with Editing Toolbar).
 
-It works with or without [Plainsight](https://github.com/magnusmoaner/obsidian-plainsight), and is part of the same family of plugins.
+It works with or without [Plainsight](https://github.com/magnusmoaner/obsidian-plainsight), and is part of the same family of plugins (see below).
+
+**Needs:** a Mac, and Obsidian 1.7.2 or later. Writing Tools also need Apple Intelligence turned on.
 
 > **Status:** early. Not yet in the Community Plugins directory.
 
@@ -16,7 +18,7 @@ With **Writing Tools commands** turned on (the default), you get one command for
 
 Select some text in a note and run one: it does exactly what picking it from the menu would. Each one can be switched off in the settings, so the command palette only lists the ones you use.
 
-Writing Tools need a Mac with Apple Intelligence turned on, and appear only while you're typing in a note.
+Writing Tools need a Mac with Apple Intelligence turned on, and appear only while you're typing in a note. The commands find them by their English names, so they work when macOS is set to English; in another language, add them under **Other menu items** with the names your menu shows.
 
 ## Other menu items
 
@@ -85,9 +87,26 @@ end run
 | ***Hotkeys*** | | |
 | Set hotkeys | — | Opens Settings → Hotkeys, showing only this plugin's commands |
 
+## The Plainsight family
+
+This plugin is part of a small family of Obsidian plugins with the same aim: Obsidian that feels calm and works like a proper note editor.
+
+| Plugin | What it does |
+| --- | --- |
+| **[Plainsight](https://github.com/magnusmoaner/obsidian-plainsight)** | An editor without Markdown syntax, and a two-column notes sidebar |
+| **Plainsight Menu Commands** (this one) | Hotkeys for Apple Intelligence's Writing Tools and any other menu item, on a Mac |
+
+Each works on its own; together they fit.
+
 ## Installation
 
-Until the plugin is in the Community Plugins directory, install it with [BRAT](https://github.com/TfTHacker/obsidian42-brat) (add `magnusmoaner/obsidian-plainsight-menu-commands`), or copy `main.js` and `manifest.json` from a release into `<vault>/.obsidian/plugins/plainsight-menu-commands/` and enable it under **Settings → Community plugins**.
+The plugin isn't in the Community Plugins directory yet, and there are no releases yet either. To install it by hand:
+
+1. Build it (see Development below), which produces `main.js`; `manifest.json` is in the repo.
+2. Copy those two files to `<your vault>/.obsidian/plugins/plainsight-menu-commands/`.
+3. In Obsidian, go to Settings → Community plugins, reload, and enable **Plainsight Menu Commands**.
+
+Once releases are published, [BRAT](https://github.com/TfTHacker/obsidian42-brat) can install it straight from GitHub (add `magnusmoaner/obsidian-plainsight-menu-commands`).
 
 ## Development
 
