@@ -1,10 +1,10 @@
 # Plainsight Menu Commands
 
-Give Apple Intelligence's **Writing Tools**, and any other item in Obsidian's menu bar, a hotkey. Mac only.
+A Plainsight companion plugin: give Apple Intelligence's **Writing Tools**, and any other item in Obsidian's menu bar, a hotkey. Mac only.
 
 Obsidian's hotkeys only work for commands, and Writing Tools aren't commands: they live in macOS's **Edit → Writing Tools** menu. This plugin turns them, and any other menu item you name, into ordinary Obsidian commands. You can then give them a hotkey in Obsidian, run them from the command palette, or put them on a toolbar button (for example with Editing Toolbar).
 
-It works with or without [Plainsight](https://github.com/magnusmoaner/obsidian-plainsight), and is part of the same family of plugins (see below).
+It works with or without [Plainsight](https://github.com/magnusmoaner/obsidian-plainsight), the core plugin of the family (see below).
 
 **Needs:** a Mac, and Obsidian 1.7.2 or later. Writing Tools also need Apple Intelligence turned on.
 
@@ -89,14 +89,12 @@ end run
 
 ## The Plainsight family
 
-This plugin is part of a small family of Obsidian plugins with the same aim: Obsidian that feels calm and works like a proper note editor.
+Plainsight is a small family of Obsidian plugins with one aim: Obsidian that feels calm and works like a proper notes app. Plainsight itself is the core plugin. Companion plugins like this one add what doesn't belong in the core, and each one works with or without it. This one is a companion because it needs access to macOS, which would keep Plainsight off phones and tablets.
 
-| Plugin | What it does |
-| --- | --- |
-| **[Plainsight](https://github.com/magnusmoaner/obsidian-plainsight)** | An editor without Markdown syntax, and a two-column notes sidebar |
-| **Plainsight Menu Commands** (this one) | Hotkeys for Apple Intelligence's Writing Tools and any other menu item, on a Mac |
-
-Each works on its own; together they fit.
+| Plugin | | What it does |
+| --- | --- | --- |
+| **[Plainsight](https://github.com/magnusmoaner/obsidian-plainsight)** | Core plugin | The notes sidebar, the editor without Markdown syntax, and search everywhere |
+| **Plainsight Menu Commands** (this one) | Companion plugin, Mac | Hotkeys for Apple Intelligence's Writing Tools and any other menu item |
 
 ## Installation
 
